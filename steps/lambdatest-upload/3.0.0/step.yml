@@ -6,7 +6,7 @@ description: |
 website: https://github.com/LambdaTest/bitrise-step-lambdatest-upload
 source_code_url: https://github.com/LambdaTest/bitrise-step-lambdatest-upload
 support_url: https://github.com/LambdaTest/bitrise-step-lambdatest-upload/issues
-published_at: 2022-05-05T20:57:08.812422+05:30
+published_at: 2022-05-17T23:28:44.178592+05:30
 source:
   git: https://github.com/LambdaTest/bitrise-step-lambdatest-upload.git
   commit: c0a39a58646cc3d79aaa25a1e1fb3a72355d94af
