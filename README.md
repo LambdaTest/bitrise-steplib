@@ -1,14 +1,28 @@
-# Bitrise Step for TestMu AI (Formerly LambdaTest)
+# Run Tests With Bitrise CI on TestMu AI (Formerly LambdaTest)
+
+
+
+
 
 
 
 <p align="center">
 
+
+
   <a href="https://www.testmuai.com/"><img src="https://img.shields.io/badge/MADE%20BY%20TestMu%20AI-000000.svg?style=for-the-badge&labelColor=000" alt="Made by TestMu AI"></a>
+
+
 
   <a href="https://community.testmuai.com/"><img src="https://img.shields.io/badge/Join%20the%20community-blueviolet.svg?style=for-the-badge&labelColor=000000" alt="Community"></a>
 
+
+
 </p>
+
+
+
+
 
 
 
@@ -16,17 +30,35 @@
 
 
 
+
+
+
+
 [TestMu AI](https://www.testmuai.com/) (Formerly LambdaTest) is the world's first full-stack AI Agentic Quality Engineering platform that empowers teams to test intelligently, smarter, and ship faster. Built for scale, it offers a full-stack testing cloud with 10K+ real devices and 3,000+ browsers. With AI-native test management, MCP servers, and agent-based automation, TestMu AI supports Selenium, Appium, Playwright, and all major frameworks. 
 
 
 
-With TestMu AI (Formerly LambdaTest), you can run Bitrise-triggered tests across real browsers and operating systems. This repository contains the TestMu AI (Formerly LambdaTest) Bitrise step library for CI/CD integration.
+
+
+
+
+With TestMu AI (Formerly LambdaTest), you can run tests with Bitrise CI across real browsers and operating systems.
+
+
+
+
 
 
 
 - [Sign up on TestMu AI](https://www.testmuai.com/register/) (Formerly LambdaTest).
 
+
+
 - Follow the [TestMu AI Documentation](https://www.testmuai.com/support/docs/) for the full setup walkthrough.
+
+
+
+
 
 
 
@@ -34,27 +66,55 @@ With TestMu AI (Formerly LambdaTest), you can run Bitrise-triggered tests across
 
 
 
+
+
+
+
 1. Bitrise CLI installed locally.
+
+
+
+
 
 
 
    Install via Homebrew:
 
+
+
    ```bash
+
+
 
    brew update && brew install bitrise
 
+
+
    ```
+
+
 
    Or check the latest release for installation instructions.
 
 
 
+
+
+
+
 2. `stepman` for sharing and managing steps.
+
+
 
 3. A TestMu AI account — sign up here.
 
+
+
 4. Your TestMu AI Username and Access Key from the Automation Dashboard.
+
+
+
+
 
 
 
@@ -62,17 +122,35 @@ With TestMu AI (Formerly LambdaTest), you can run Bitrise-triggered tests across
 
 
 
+
+
+
+
 Clone the repository:
+
+
+
+
 
 
 
 ```bash
 
+
+
 git clone https://github.com/LambdaTest/bitrise-steplib
+
+
 
 cd bitrise-steplib
 
+
+
 ```
+
+
+
+
 
 
 
@@ -80,17 +158,35 @@ Set your TestMu AI credentials as environment variables:
 
 
 
+
+
+
+
 - For Linux/macOS:
+
+
+
+
 
 
 
 ```bash
 
+
+
 export LT_USERNAME="YOUR_USERNAME"
+
+
 
 export LT_ACCESS_KEY="YOUR_ACCESS_KEY"
 
+
+
 ```
+
+
+
+
 
 
 
@@ -98,13 +194,27 @@ export LT_ACCESS_KEY="YOUR_ACCESS_KEY"
 
 
 
+
+
+
+
 ```bash
+
+
 
 set LT_USERNAME="YOUR_USERNAME"
 
+
+
 set LT_ACCESS_KEY="YOUR_ACCESS_KEY"
 
+
+
 ```
+
+
+
+
 
 
 
@@ -112,7 +222,15 @@ Browse available steps under `/steps` or create your own step.
 
 
 
+
+
+
+
 ### Run tests
+
+
+
+
 
 
 
@@ -120,11 +238,23 @@ Run a Bitrise workflow locally using the CLI:
 
 
 
+
+
+
+
 ```bash
+
+
 
 bitrise run <workflow-name>
 
+
+
 ```
+
+
+
+
 
 
 
@@ -132,11 +262,23 @@ To share your step with the community:
 
 
 
+
+
+
+
 ```bash
+
+
 
 stepman share
 
+
+
 ```
+
+
+
+
 
 
 
@@ -144,15 +286,31 @@ stepman share
 
 
 
+
+
+
+
 To test locally hosted apps, set up the TestMu AI tunnel. OS-specific guides:
+
+
+
+
 
 
 
 - [Local Testing on Windows](https://www.testmuai.com/support/docs/local-testing-for-windows/)
 
+
+
 - [Local Testing on macOS](https://www.testmuai.com/support/docs/local-testing-for-macos/)
 
+
+
 - [Local Testing on Linux](https://www.testmuai.com/support/docs/local-testing-for-linux/)
+
+
+
+
 
 
 
@@ -160,15 +318,31 @@ Configure tunnel in your Bitrise step input:
 
 
 
+
+
+
+
 ```yaml
+
+
 
 - lambdatest-tunnel:
 
+
+
     inputs:
+
+
 
     - tunnel_name: my-tunnel
 
+
+
 ```
+
+
+
+
 
 
 
@@ -176,7 +350,15 @@ Configure tunnel in your Bitrise step input:
 
 
 
+
+
+
+
 Contributions are welcome. Open an issue to discuss your idea before submitting a pull request. When reporting bugs, include your Bitrise CLI version, OS, and step configuration.
+
+
+
+
 
 
 
@@ -184,11 +366,23 @@ Contributions are welcome. Open an issue to discuss your idea before submitting 
 
 
 
+
+
+
+
 Connect with testers and developers in the [TestMu AI Community](https://community.testmuai.com/). Ask questions, share what you are building, and discuss best practices in test automation and DevOps.
+
+
 
   
 
+
+
 ## TestMu AI (Formerly LambdaTest) Certifications
+
+
+
+
 
 
 
@@ -196,7 +390,15 @@ Earn free [TestMu AI Certifications](https://www.testmuai.com/certifications/) f
 
 
 
+
+
+
+
 ## Learning Resources by TestMu AI (Formerly LambdaTest)
+
+
+
+
 
 
 
@@ -204,17 +406,35 @@ Learn modern testing through tutorials, guides, videos, and weekly updates:
 
 
 
+
+
+
+
 * [TestMu AI Blog](https://www.testmuai.com/blog/)
+
+
 
 * [TestMu AI Learning Hub](https://www.testmuai.com/learning-hub/)
 
+
+
 * [TestMu AI on YouTube](https://www.youtube.com/@TestMuAI)
+
+
 
 * [TestMu AI Newsletter](https://www.testmuai.com/newsletter/)
 
+
+
   
 
+
+
 ## LambdaTest is Now TestMu AI
+
+
+
+
 
 
 
@@ -222,7 +442,15 @@ On **January 12, 2026**, [LambdaTest evolved to TestMu AI](https://www.testmuai.
 
 
 
+
+
+
+
 Same team. Same infrastructure. Same customer accounts. All existing LambdaTest logins, scripts, capabilities, and integrations continue to work without change.
+
+
+
+
 
 
 
@@ -230,7 +458,15 @@ Same team. Same infrastructure. Same customer accounts. All existing LambdaTest 
 
 
 
+
+
+
+
 ### How LambdaTest Evolved into TestMu AI
+
+
+
+
 
 
 
@@ -238,7 +474,15 @@ In 2017, we launched LambdaTest with a simple mission: make testing fast, reliab
 
 
 
+
+
+
+
 As software development entered the AI era, testing had to evolve, too. We rebuilt the architecture to be AI-native from the ground up, with autonomous agents that **plan, author, execute, analyze, and optimize tests** while keeping humans in the loop. The platform integrates with your repos, CI, IDEs, and terminals, continuously learning from every code change and development signal.
+
+
+
+
 
 
 
@@ -246,7 +490,15 @@ That evolution earned a new name: **TestMu AI**, built for an AI-first future of
 
 
 
+
+
+
+
 What started as a high-performance cloud testing platform has transformed into an AI-native, multi-agent system powering a connected, end-to-end quality layer. That evolution defined a new identity: LambdaTest evolved into TestMu AI, built for an AI-first future of quality engineering.
+
+
+
+
 
 
 
@@ -254,5 +506,11 @@ What started as a high-performance cloud testing platform has transformed into a
 
 
 
+
+
+
+
 Got a question? Email [support@testmuai.com](mailto:support@testmuai.com) or chat with us 24x7 from our chat portal.
+
+
 
