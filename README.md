@@ -1,44 +1,130 @@
-# Bitrise StepLib
+﻿# Run Bitrise Step Tests on TestMu AI (Formerly LambdaTest)
 
-You can find the collection of all [Bitrise integrations](https://www.bitrise.io/integrations) in this repository under [/steps](https://github.com/bitrise-io/bitrise-steplib/tree/master/steps).
+<p align="center">
+  <a href="https://www.testmuai.com/"><img src="https://img.shields.io/badge/MADE%20BY%20TestMu%20AI-000000.svg?style=for-the-badge&labelColor=000" alt="Made by TestMu AI"></a>
+  <a href="https://github.com/LambdaTest/bitrise-steplib"><img src="https://img.shields.io/github/stars/LambdaTest/bitrise-steplib?style=for-the-badge&labelColor=000" alt="GitHub Stars"></a>
+  <a href="https://community.testmuai.com/"><img src="https://img.shields.io/badge/Join%20the%20community-blueviolet.svg?style=for-the-badge&labelColor=000000" alt="Community"></a>
+</p>
 
-## Contribution
+## Getting Started
 
-If you find something missing from the steps, you can drop us an issue, or [create your own step](https://devcenter.bitrise.io/en/steps-and-workflows/developing-your-own-bitrise-step.html#ot-fltr-modal). See our example for creating & sharing a new step under [/step-template](https://github.com/bitrise-steplib/step-template).
+[TestMu AI](https://www.testmuai.com/) (Formerly LambdaTest) is the world's first full-stack AI Agentic Quality Engineering platform that empowers teams to test intelligently, smarter, and ship faster. Built for scale, it offers a full-stack testing cloud with 10K+ real devices and 3,000+ browsers. With AI-native test management, MCP servers, and agent-based automation, TestMu AI supports Selenium, Appium, Playwright, and all major frameworks. 
 
-### Important
+With TestMu AI (Formerly LambdaTest), you can run Bitrise CI/CD steps and integrations across real browsers and operating systems. This sample shows how to configure the LambdaTest Bitrise step library to run on the TestMu AI cloud.
 
-One PR should contain only one file (except the icon), and one change.
+- [Sign up on TestMu AI](https://www.testmuai.com/register/) (Formerly LambdaTest).
+- Follow the [TestMu AI Documentation](https://www.testmuai.com/support/docs/) for the full setup walkthrough.
 
-We require to create a new PR after addressing review concerns. This is needed to guarantee that the last (correct) tag/version of the step source repository is referenced.
+### Prerequisites
 
-One PR should contain only one step.
+1. [Bitrise CLI](https://www.bitrise.io/cli) installed locally.
 
-### Install Bitrise CLI
+   Install via Homebrew:
+   ```bash
+   brew update && brew install bitrise
+   ```
+   Or check the [latest release](https://github.com/bitrise-io/bitrise/releases) for installation instructions.
 
-Install the [Bitrise CLI](https://www.bitrise.io/cli) to run `bitrise` on your machine locally.
+2. [`stepman`](https://github.com/bitrise-io/stepman) for sharing and managing steps.
+3. A TestMu AI account — [sign up here](https://www.testmuai.com/register/).
+4. Your TestMu AI Username and Access Key from the [Automation Dashboard](https://automation.testmuai.com/).
 
-You can install it via Homebrew:
+### Setup
 
-`brew update && brew install bitrise`
+Clone the repository:
 
-Or check the latest release with instructions at: [https://github.com/bitrise-io/bitrise/releases](https://github.com/bitrise-io/bitrise/releases)
+```bash
+git clone https://github.com/LambdaTest/bitrise-steplib
+cd bitrise-steplib
+```
 
-### Share your step
+Set your TestMu AI credentials as environment variables:
 
-After implementing your own step, you can share it with other Bitrisers using this StepLib via [`stepman`](https://github.com/bitrise-io/stepman).
+- For Linux/macOS:
 
-If you are ready, just run `stepman share` and follow the instructions.
+```bash
+export LT_USERNAME="YOUR_USERNAME"
+export LT_ACCESS_KEY="YOUR_ACCESS_KEY"
+```
 
-Follow [@bitrise](https://twitter.com/bitrise) on Twitter for #status and step updates 🚀.
+- For Windows:
 
+```bash
+set LT_USERNAME="YOUR_USERNAME"
+set LT_ACCESS_KEY="YOUR_ACCESS_KEY"
+```
 
-## Abandoned Step policy
+Browse available steps under `/steps` or [create your own step](https://devcenter.bitrise.io/en/steps-and-workflows/developing-your-own-bitrise-step.html).
 
-We try to keep this Step Library up-to-date and active. Steps shared in this collection have to be actively maintained to receive fixes / updates when required (e.g. security issue fixes or general usability fixes).
+### Run tests
 
-**If you're a Step maintainer** you're not required to accept every Pull Request sent to your Step **but you should be reachable within a reasonable timeframe**. If we try to contact you several times regarding an important fix/update in your Step and you refuse to answer for several weeks *we might deprecate, remove or replace your Step* in the collection. Abandoned Steps can be a threat for those who use it, please keep this in mind if you decide to share your Step with others!
+Run a Bitrise workflow locally using the CLI:
 
-**If you shared a Step but you're no longer able to or you don't want to maintain it** please create a GitHub issue in this repository (https://github.com/bitrise-io/bitrise-steplib).
+```bash
+bitrise run <workflow-name>
+```
 
-**If you're a user of a Step which has critical (security or functionality) issues** please create a ticket in the Step's Issue Tracker (every Step declares the preferred way of reporting issues with the `support_url` attribute - [see](https://github.com/bitrise-io/bitrise-steplib/blob/master/steps/activate-ssh-key/3.1.0/step.yml#L15)) first. If you don't get a response from the Step's maintainer for an extended period (reasonably, in general, for more than a couple of weeks) please create a GitHub issue in this repository (https://github.com/bitrise-io/bitrise-steplib) and we'll try to resolve the issue, following the Abandoned Step policy. *Please be patient* and keep in mind that everyone who contribute to this collection does that with an intention to help You by providing a Step for you to use, don't be rude to Step maintainers!
+To share your step with the community:
+
+```bash
+stepman share
+```
+
+### Local testing with TestMu AI Tunnel
+
+To test locally hosted apps, set up the TestMu AI tunnel. OS-specific guides:
+
+- [Local Testing on Windows](https://www.testmuai.com/support/docs/local-testing-for-windows/)
+- [Local Testing on macOS](https://www.testmuai.com/support/docs/local-testing-for-macos/)
+- [Local Testing on Linux](https://www.testmuai.com/support/docs/local-testing-for-linux/)
+
+Configure tunnel in your Bitrise step input:
+
+```yaml
+- lambdatest-tunnel:
+    inputs:
+    - tunnel_name: my-tunnel
+```
+
+## Contributions
+
+Contributions are welcome. Open an issue to discuss your idea before submitting a pull request. When reporting bugs, include your Node.js version, OS, and Angular CLI version.
+
+## TestMu AI (Formerly LambdaTest) Community
+
+Connect with testers and developers in the [TestMu AI Community](https://community.testmuai.com/). Ask questions, share what you are building, and discuss best practices in test automation and DevOps.
+  
+## TestMu AI (Formerly LambdaTest) Certifications
+
+Earn free [TestMu AI Certifications](https://www.testmuai.com/certifications/) for testers, developers, and QA engineers. Validate your skills in Selenium, Cypress, Playwright, Appium, Espresso and more. Industry-recognized, shareable on LinkedIn, and built by practitioners, not marketers.
+
+## Learning Resources by TestMu AI (Formerly LambdaTest)
+
+Learn modern testing through tutorials, guides, videos, and weekly updates:
+
+* [TestMu AI Blog](https://www.testmuai.com/blog/)
+* [TestMu AI Learning Hub](https://www.testmuai.com/learning-hub/)
+* [TestMu AI on YouTube](https://www.youtube.com/@TestMuAI)
+* [TestMu AI Newsletter](https://www.testmuai.com/newsletter/)
+  
+## LambdaTest is Now TestMu AI
+
+On **January 12, 2026**, [LambdaTest evolved to TestMu AI](https://www.testmuai.com/lambdatest-is-now-testmuai/), the world's first fully autonomous **Agentic AI Quality Engineering Platform**.
+
+Same team. Same infrastructure. Same customer accounts. All existing LambdaTest logins, scripts, capabilities, and integrations continue to work without change.
+
+ð Find the new home for [LambdaTest](https://www.testmuai.com).
+
+### How LambdaTest Evolved into TestMu AI
+
+In 2017, we launched LambdaTest with a simple mission: make testing fast, reliable, and accessible. As LambdaTest grew, we expanded into Test Intelligence, Visual Regression Testing, Accessibility Testing, API Testing, and Performance Testing, covering the full depth of the testing lifecycle.
+
+As software development entered the AI era, testing had to evolve, too. We rebuilt the architecture to be AI-native from the ground up, with autonomous agents that **plan, author, execute, analyze, and optimize tests** while keeping humans in the loop. The platform integrates with your repos, CI, IDEs, and terminals, continuously learning from every code change and development signal.
+
+That evolution earned a new name: **TestMu AI**, built for an AI-first future of quality engineering. TestMu is not a new name for us. It is the name of our annual community conference, which has brought together 100,000+ quality engineers to discuss how AI would reshape testing, long before that became an industry norm. 
+
+What started as a high-performance cloud testing platform has transformed into an AI-native, multi-agent system powering a connected, end-to-end quality layer. That evolution defined a new identity: LambdaTest evolved into TestMu AI, built for an AI-first future of quality engineering.
+
+## Support
+
+Got a question? Email [support@testmuai.com](mailto:support@testmuai.com) or chat with us 24x7 from our chat portal.
