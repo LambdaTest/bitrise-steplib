@@ -17,17 +17,17 @@ With TestMu AI (Formerly LambdaTest), you can run Bitrise CI/CD steps and integr
 
 ### Prerequisites
 
-1. [Bitrise CLI](https://www.bitrise.io/cli) installed locally.
+1. Bitrise CLI installed locally.
 
    Install via Homebrew:
    ```bash
    brew update && brew install bitrise
    ```
-   Or check the [latest release](https://github.com/bitrise-io/bitrise/releases) for installation instructions.
+   Or check the latest release for installation instructions.
 
-2. [`stepman`](https://github.com/bitrise-io/stepman) for sharing and managing steps.
-3. A TestMu AI account — [sign up here](https://www.testmuai.com/register/).
-4. Your TestMu AI Username and Access Key from the [Automation Dashboard](https://automation.testmuai.com/).
+2. `stepman` for sharing and managing steps.
+3. A TestMu AI account — sign up here.
+4. Your TestMu AI Username and Access Key from the Automation Dashboard.
 
 ### Setup
 
@@ -54,7 +54,7 @@ set LT_USERNAME="YOUR_USERNAME"
 set LT_ACCESS_KEY="YOUR_ACCESS_KEY"
 ```
 
-Browse available steps under `/steps` or [create your own step](https://devcenter.bitrise.io/en/steps-and-workflows/developing-your-own-bitrise-step.html).
+Browse available steps under `/steps` or create your own step.
 
 ### Run tests
 
